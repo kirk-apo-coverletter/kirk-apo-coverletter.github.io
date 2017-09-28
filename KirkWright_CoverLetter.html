@@ -1,0 +1,142 @@
+<html>
+
+<head>
+	<link type="text/css" rel="stylesheet" href="KirkWright_CoverLetter.css">
+	<link href="http://digitalfactory.scotiabank.com/images/df-favicon.png" rel="shortcut icon" type="image/x-icon">
+	<script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+    <script src="https://unpkg.com/leaflet-responsive-popup@0.2.0/leaflet.responsive.popup.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.2.0/leaflet.responsive.popup.css" />
+	<title>Kirk Wright - APO Cover Letter</title>
+</head>
+
+<body>
+	<div id="title">
+		<img src="df.png" class="df fade one">
+		<hr class="fade one">
+		<h3 class="fade one">Kirk Wright - APO Cover Letter</h3>
+	</div>
+	<div class="content fade two" id="content-one">
+		<div class="row" id="lala">
+			<img src="kirk.jpg" class="img" id="headshot">
+			<img src="kirk.jpg" id="zoom-view">
+			<p class="text">To Whom It May Concern,<br><br>I write to express my interest in joining Scotiabank as an Associate Project Owner in September, 2018. I had an outstanding experience this past summer working for Scotiabank in Toronto as an intern on the Academic Partnerships team, and I would love to return to the bank in such an exciting new role. I firmly believe in the path that Scotiabank is following to change the way we bank. My passions lie at the intersection of technology and people, and my skills and experience would make me an impactful member of the team you are building.</p>
+		</div>
+	</div>
+
+	<div class="button-r fade two" id='arrow-one' onclick="hideObj('content-one'); hideObj2('arrow-one'); showObj('content-two'); showObj3('arrow-two'); showObj2('arrow-three'); initMap(); ">
+		<img class="arrow" src="arrow.png" >
+	</div>
+
+	<div class="button-l" id='arrow-two' onclick="hideObj('content-two'); hideObj3('arrow-two'); hideObj2('arrow-three'); showObj('content-one'); showObj2('arrow-one');">
+		<img class="arrow" src="arrow2.png" >
+	</div>
+
+	<div class="content" id="content-two">
+		<div class="row">
+			<div id='map-leaflet' class='map'></div>
+			<p class="text">The most fascinating part of my job at Scotiabank this summer was overseeing research agreements with universities as well as other partners like NextAI and CDL Rotman. These relationships are hugely beneficial in helping us solve complex business problems. I noticed that the limiting factor in this process was not a lack of valuable innovation and research, but rather a lack of coordinated focus on implementation. As an Associate Product Owner, </p>
+		</div>
+		<br><button type="button" class="refresh" onclick="initMap2();">Refresh Map</button>
+	</div>
+	
+	<div class="button-r" id='arrow-three' onclick="hideObj('content-two'); hideObj3('arrow-two'); hideObj2('arrow-three'); showObj('content-three'); showObj3('arrow-four');">
+		<img class="arrow" src="arrow.png" >
+	</div>
+
+	<div class="button-l" id='arrow-four' onclick="hideObj('content-three'); hideObj3('arrow-four'); showObj('content-two'); showObj2('arrow-three'); showObj3('arrow-two');">
+		<img class="arrow" src="arrow2.png" >
+	</div>
+
+	<div class="content" id="content-three">
+		<img src="sb.png" class="img2">
+		<p class="text">Dear Scotiabankers,<br><br>I write to express my interest in joining you as an Associate Project Owner in September, 2018. I had an outstanding experience this past summer working for Scotiabank in Toronto as an intern on the Academic Partnerships team, and I would love to return to the bank in such an exciting role. I firmly believe in the path that Scotiabank is following to change the way we bank, and I believe that my skills and experience would make me an impactful member of the team.</p>
+	</div>
+
+	<script>
+
+
+		var map;
+
+		function initMap () {
+
+			if (map === undefined) {
+				L.mapbox.accessToken = 'pk.eyJ1Ijoia2lya3dyaWdodCIsImEiOiJjajdxaGFhNDQyY3A3MndvNmc2dmt0ZHVsIn0.VoU4TS-lsbQ0x_j0Md_Uaw';
+				map = new L.mapbox.map('map-leaflet', 'mapbox.light').setView([43.65, -79.372], 15);
+				setTimeout(function(){map._onResize();}, 500);
+
+				var dfIcon = L.icon({
+    				iconUrl: 'df2.png',
+
+    				iconSize:     [40, 40], // size of the icon
+    				iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+				});
+
+				var sbIcon = L.icon({
+    				iconUrl: 'sb.png',
+
+    				iconSize:     [36, 36], // size of the icon
+    				iconAnchor:   [18, 18], // point of the icon which will correspond to marker's location
+				});
+
+
+				var DF = L.marker([43.651403, -79.365717], {icon:dfIcon}).addTo(map);
+				var popup = L.responsivePopup({ hasTip: false }).setContent("<div class=''><h2 style='text-align:center;'>Digital Factory</h2><hr><p>Working at the DF would be an incredible...</p></div>");
+				DF.bindPopup(popup);
+
+				var Yonge = L.marker([43.6498414,-79.3796533], {icon:sbIcon}).addTo(map);
+				var popup1 = L.responsivePopup({ hasTip: false }).setContent("<div class=''><h2 style='text-align:center;'>My Old Home</h2><hr><p>I had a great time working with the team at 100 Yonge!</p></div>");
+				Yonge.bindPopup(popup1);
+			}
+		}
+
+		function initMap2 () {
+
+			L.mapbox.accessToken = 'pk.eyJ1Ijoia2lya3dyaWdodCIsImEiOiJjajdxaGFhNDQyY3A3MndvNmc2dmt0ZHVsIn0.VoU4TS-lsbQ0x_j0Md_Uaw';
+			var map = new L.mapbox.map('map-leaflet', 'mapbox.streets').setView([43.65, -79.37], 14);
+			setTimeout(function(){map._onResize();}, 500);
+
+			var DF = L.marker([43.651403, -79.365717]).addTo(map);
+			var popup = L.responsivePopup().setContent("<h2>Digital Factory</h2><hr><p>Working at the DF would be an incredible...</p>");
+			DF.bindPopup(popup);
+
+			var Yonge = L.marker([43.6498414,-79.3796533]).addTo(map);
+			var popup1 = L.responsivePopup().setContent("<h2>100 Yonge</h2><hr><p>I spent this past summer at 100 Yonge St...</p>");
+			Yonge.bindPopup(popup1);
+		}
+
+		function hideObj(id) {
+			document.getElementById(id).className = "content-a fadeOut";
+			setTimeout(function(){document.getElementById(id).style.display = 'none'}, 500);
+		}
+
+		function hideObj2(id) {
+			document.getElementById(id).className = "button-r fadeOut";
+			setTimeout(function(){document.getElementById(id).style.display = 'none'}, 500);
+		}
+
+		function hideObj3(id) {
+			document.getElementById(id).className = "button-l fadeOut";
+			setTimeout(function(){document.getElementById(id).style.display = 'none'}, 500);
+		}
+
+		function showObj(id) {
+			setTimeout(function(){document.getElementById(id).style.display = 'block'}, 500);
+			document.getElementById(id).className = "content fade";
+		}
+
+		function showObj2(id) {
+			setTimeout(function(){document.getElementById(id).style.display = 'block'}, 500);
+			document.getElementById(id).className = "button-r fade";
+		}
+
+		function showObj3(id) {
+			setTimeout(function(){document.getElementById(id).style.display = 'block'}, 500);
+			document.getElementById(id).className = "button-l fade";
+		}
+		
+	</script>
+
+</body>
+
+</html>

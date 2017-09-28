@@ -1,0 +1,235 @@
+body {
+	margin-top:10px;
+	margin-left:15%;
+	margin-right: 15%;
+	margin-bottom:50px;
+	text-align: center;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+
+h3 {
+	color: darkslategrey;
+	font-family: garamond, sans-serif;
+	font-weight: 100;
+	font-size: 50px;
+	opacity: 0;
+	margin-top: 0px;
+}
+
+#title hr {
+	opacity: 0;
+}
+
+.df {
+	width: 40%;
+	opacity: 0;
+}
+
+.content {
+
+	opacity: 0;
+
+	-webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+	transition: all 1s ease;
+}
+
+.content-a {
+
+	opacity: 1;
+
+	-webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+	transition: all 1s ease;
+}
+
+.fade {
+	-webkit-animation:fadeIn ease-in 1; 
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+.fadeOut {
+	-webkit-animation:fadeOut ease 1; 
+    -moz-animation:fadeOut ease 1;
+    animation:fadeOut ease 1;
+
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+}
+
+.one {
+	-webkit-animation-delay: 0.7s;
+	-moz-animation-delay: 0.7s;
+	animation-delay: 0.7s;
+}
+
+.two {
+	-webkit-animation-delay: 1.2s;
+	-moz-animation-delay:1.2s;
+	animation-delay: 1.2s;
+}
+
+.img {
+	position: static;
+	height: 30%;
+	float: left;
+	display: inline;
+	margin-right: 20px;
+}
+
+.img2 {
+	position: static;
+	height: 30%;
+	float: right;
+	display: inline;
+	margin-right: 20px;
+}
+
+
+#zoom-view {
+	position: fixed;
+	height: 80%;
+	top: 10%;
+	transform: translate(-50%, 0);
+	left: 50%;
+	opacity: 0;
+	pointer-events: none;
+
+	-webkit-transition: all 0.5s ease; /* Safari and Chrome */
+    -moz-transition: all 0.5s ease; /* Firefox */
+    -ms-transition: all 0.5s ease; /* IE 9 */
+    -o-transition: all 0.5s ease; /* Opera */
+	transition: all 0.5s ease;
+}
+
+#headshot:hover + #zoom-view {
+	opacity: 1;
+}
+
+.text {
+	color: darkslategrey;
+	font-weight: 200;
+	font-size: 24px;
+	font-family: garamond, sans-serif;
+	display: inline;
+}
+
+.row {
+	position: relative;
+	width: 100%;
+	text-align: left;
+}
+
+.left {
+	left: 0;
+}
+
+.right {
+	right: 0;
+}
+
+.button-r {
+	transform: translate(0, 0);
+	left: 90%;
+	top: 50%;
+	height: 40px;
+	position: fixed;
+	opacity: 0;
+}
+
+.button-l {
+	transform: translate(0, 0);
+	right: 90%;
+	top: 50%;
+	height: 40px;
+	position: fixed;
+	opacity: 0;
+}
+
+#arrow-two, #arrow-three, #arrow-four {
+	display: none;
+}
+
+.arrow {
+ 	position: relative;
+ 	height: 100%;
+
+ 	-webkit-transition: transform 0.5s ease; /* Safari and Chrome */
+    -moz-transition: transform 0.5s ease; /* Firefox */
+    -ms-transition: transform 0.5s ease; /* IE 9 */
+    -o-transition: transform 0.5s ease; /* Opera */
+	transition: transform 0.5s ease;
+ }
+
+
+.arrow:hover { 
+	transform: scale(1.5);
+ }
+
+#content-one {
+  	opacity: 0;
+ }
+
+ #content-two {
+ 	opacity: 0;
+ 	display: none;
+ }
+
+  #content-three {
+ 	opacity: 0;
+ 	display: none;
+ }
+
+ .map {
+ 	position: static;
+ 	width: 50%;
+ 	height: 50%;
+ 	display: inline-block;
+ 	float: left;
+ 	margin: 0 15px 10px 0;
+ }
+
+ .refresh {
+    background-color: white; 
+    color: black; 
+    border: 2px solid darkslategrey;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.refresh:hover {
+	background-color: darkslategray;
+    color: white;
+}
