@@ -23,6 +23,17 @@ h3 {
 	margin-top: 0px;
 }
 
+h1 {
+	color: darkslategrey;
+	font-family: garamond, sans-serif;
+	font-weight: 100;
+	font-size: 60px;
+	opacity: 1;
+	margin-top: 0px;
+	background-color: lightgrey;
+	padding: 10%;
+}
+
 #title hr {
 	opacity: 0;
 }
@@ -99,15 +110,34 @@ h3 {
 	height: 30%;
 	float: left;
 	display: inline;
-	margin-right: 20px;
+	margin: 0 20px 10px 0;
+}
+
+a .img {
+	position: static;
+	height: 30%;
+	float: left;
+	display: inline;
+	margin: 0 20px 10px 0;
+
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+a .img:hover {
+	opacity: 0.7;
+	transform: scale(0.9);
 }
 
 .img2 {
 	position: static;
-	height: 30%;
+	height: 40%;
 	float: right;
 	display: inline;
-	margin-right: 20px;
+	margin: 0 0 10px 20px;
 }
 
 
@@ -120,10 +150,10 @@ h3 {
 	opacity: 0;
 	pointer-events: none;
 
-	-webkit-transition: all 0.5s ease; /* Safari and Chrome */
-    -moz-transition: all 0.5s ease; /* Firefox */
-    -ms-transition: all 0.5s ease; /* IE 9 */
-    -o-transition: all 0.5s ease; /* Opera */
+	-webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
 
@@ -171,7 +201,7 @@ h3 {
 	opacity: 0;
 }
 
-#arrow-two, #arrow-three, #arrow-four {
+#arrow-two, #arrow-three, #arrow-four, #arrow-five, #arrow-six, #arrow-seven, #arrow-eight {
 	display: none;
 }
 
@@ -195,12 +225,7 @@ h3 {
   	opacity: 0;
  }
 
- #content-two {
- 	opacity: 0;
- 	display: none;
- }
-
-  #content-three {
+ #content-two, #content-three, #content-four, #content-five {
  	opacity: 0;
  	display: none;
  }
@@ -211,7 +236,7 @@ h3 {
  	height: 50%;
  	display: inline-block;
  	float: left;
- 	margin: 0 15px 10px 0;
+ 	margin: 0 25px 10px 0;
  }
 
  .refresh {
@@ -232,4 +257,26 @@ h3 {
 .refresh:hover {
 	background-color: darkslategray;
     color: white;
+}
+
+
+.popup {
+	background-color: rgba(244, 0, 0, 0.9);
+	padding: 10px;
+	margin: -15px -10px;
+	font-color: white;
+}
+
+.banner {
+	width: 70%;
+	left: 15%;
+	margin-top: -30px;
+}
+
+.credits {
+	color: darkslategrey;
+	font-weight: 200;
+	font-size: 14px;
+	font-family: garamond, sans-serif;
+	display: inline;
 }
